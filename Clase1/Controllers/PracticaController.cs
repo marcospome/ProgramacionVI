@@ -1,29 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Clase1.Controllers
+namespace MenuExpress.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class PracticaController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Congelado", "Muy frío", "Frío", "Fresco", "Neutro", "Cálido", "Pesado", "Caluroso", "Sofocante", "Abrasador"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<PracticaController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public PracticaController(ILogger<PracticaController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<ModelPractica> Get()
         {
             return Enumerable.Range(1, 5).Select(index => { 
                 var temperatureC = Random.Shared.Next(-20, 55);
-                return new WeatherForecast
+                return new ModelPractica
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                     TemperatureC = temperatureC,

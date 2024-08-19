@@ -1,6 +1,6 @@
-namespace Clase1
+namespace MenuExpress
 {
-    public class WeatherForecast
+    public class ModelPractica
     {
         public DateOnly Date { get; set; }
 
